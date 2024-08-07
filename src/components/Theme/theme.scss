@@ -1,0 +1,42 @@
+
+
+.toggle {
+    position: relative;
+    float: right;
+    button {
+        transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+        box-shadow:
+            0 15px 25px -4px rgba(233, 232, 232, 0.5),
+            inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2),
+            0 -10px 15px -1px rgba(255, 255, 255, 0.6),
+            inset 0 3px 4px -1px rgba(240, 240, 240, 0.2),
+            inset 0 0 5px 1px rgba(255, 255, 255, 0.8),
+            inset 0 20px 30px 0 rgba(238, 238, 238, 0.2);
+        border-radius: 68.8px;
+        position: absolute;
+        background: #eaeaea;
+        margin-left: -250px;
+        margin-top: 0px;
+        display: block;
+        height: 40px;
+        width: 40px;
+        top: 100%;
+    }
+    
+}
+
+.toggle button:active {
+    filter: blur(0.5px);
+    box-shadow:
+        0 12px 25px -4px rgba(0, 0, 0, 0.4),
+        inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9),
+        0 -10px 15px -1px rgba(255, 255, 255, 0.6),
+        inset 0 8px 25px 0 rgba(0, 0, 0, 0.4),
+        inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
+}
+@media (max-width:950px) {
+    .toggle{
+        display: none;
+    }
+}
+

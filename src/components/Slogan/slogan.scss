@@ -1,0 +1,82 @@
+.slogan_bg {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide any overflow */
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image covers the container */
+        z-index: -1; /* Put the background behind the content */
+        filter: brightness(0.7); /* Darken the background for better text readability */
+    }
+
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        max-width: 80%; /* Limit the width for better readability on larger screens */
+
+        .slogan {
+            margin: 0.5em 0;
+            font-size: 2.5em;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Stronger text shadow for better contrast */
+            line-height: 1.2;
+        }
+    }
+
+    .get_started {
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        // text-transform: uppercase;
+        margin-top: 30px;
+        text-decoration: none;
+        border: 2px solid purple;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-weight: bold;
+        background: transparent;
+        position: relative;
+        transition: all 1s;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
+    .get_started:hover {
+        color: white;
+    }
+
+    .get_started::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        top: 0;
+        left: -40px;
+        transform: skewX(45deg);
+        background-color: purple;
+        z-index: -1;
+        transition: all 1s;
+    }
+
+    .get_started:hover::before {
+        width: 160%;
+    }
+    .small-slogan {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+        color: rgb(252, 252, 252);
+        font-size: 1em;
+        opacity: 0.8;
+    }
+}

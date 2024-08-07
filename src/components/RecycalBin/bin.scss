@@ -1,0 +1,85 @@
+$primary-color: #3498db;
+$danger-color: #e74c3c;
+$success-color: #2ecc71;
+$bg-color: #ecf0f1;
+$text-color: #2c3e50;
+
+#note-manager {
+    .bin_container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: $bg-color;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        color: $text-color;
+        margin-bottom: 20px;
+    }
+
+    .notes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .note {
+        background-color: white;
+        border: 1px solid $text-color;
+        border-radius: 5px;
+        padding: 15px;
+        width: calc(50% - 10px);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition:
+            transform 0.3s ease,
+            background-color 0.3s ease;
+
+        p {
+            margin: 0;
+            color: $text-color;
+        }
+
+        .btn-delete,
+        .btn-restore {
+            margin-top: 10px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &.btn-delete {
+                background-color: $danger-color;
+                color: white;
+
+                &:hover {
+                    background-color: darken($danger-color, 10%);
+                }
+            }
+
+            &.btn-restore {
+                background-color: $success-color;
+                color: white;
+
+                &:hover {
+                    background-color: darken($success-color, 10%);
+                }
+            }
+        }
+    }
+
+    .note.deleted {
+        background-color: lighten($danger-color, 40%);
+        transform: scale(0.98);
+        text-decoration: line-through;
+    }
+
+    .no-notes {
+        color: $text-color;
+        font-style: italic;
+        text-align: center;
+        margin: 20px 0;
+    }
+}
